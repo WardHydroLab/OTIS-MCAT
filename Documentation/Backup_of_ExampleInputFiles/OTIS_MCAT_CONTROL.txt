@@ -1,0 +1,83 @@
+%---------------------------------------------------------------------------------------------------------------------------------
+% SYSTEM CONFIGURATION, ACTIONS
+%	- for typical operation on a high performance computer, do not launch MCAT nor show waitbar
+%---------------------------------------------------------------------------------------------------------------------------------
+1		;% OS (1 = Windows, 2 = UNIX)
+0		;% Run MC Simulations? (1 = yes, 0 = no)
+1		;% Launch MCAT? (1 = yes, 0 = no)
+0		;% Show waitbar while simulations are being calculated? (1 = yes, 0 = no)
+%---------------------------------------------------------------------------------------------------------------------------------
+% BASIC MODEL CONTROLS SET IN THIS SECTION
+%---------------------------------------------------------------------------------------------------------------------------------
+15		;% dt - timestep for calculations (s)
+1		;% dx - spatial step for calculations (m)
+0.0125	;% Qstart - discharge at upstream end of model (m3/s)
+581		;% Length of study reach between observation points (m)
+50000   ;% Number of Parameter Sets to test in simulation
+0		;% Random seed (0 = use clock, fully random parameter sets; any positive integer = re-createable random set of parameters)
+%---------------------------------------------------------------------------------------------------------------------------------
+% OTIS PARAMETERS AND RANGES
+% - minimum values in this section must be greater than zero for the code to run properly
+% - set min and max values equal to fix the parameter value
+%---------------------------------------------------------------------------------------------------------------------------------
+1e-2	;% DISP minimum value (m2/s)
+10		;% DISP maximum value (m2/s)
+1e-5	;% ALPHA minimum value (s-1)
+1e-1	;% ALPHA maximum value (s-1)
+1e-2	;% A_S minimum value (m2)
+1		;% A_S maximum value (m2)
+2		;% AREAFLAG (1 = estimate area, specify relative bounds around guess; 2 = specify range)
+0.1		;% AREA minimum value, (if AREAFLAG = 1, as AGUESS*__ ; if AREAFLAG = 2, AMIN m2)
+1.0		;% AREA maximum value, (if AREAFLAG = 1, as AGUESS*__ ; if AREAFLAG = 2, AMAX m2)
+%---------------------------------------------------------------------------------------------------------------------------------
+% DISCHARGE PARAMETERS AND RANGES
+% - Use zeros for both min and max to zero-out the parameter
+% - Min and max values must be non-zero for a range to be simulated. Use an infinitesimally small lower-end to approximate a...
+%	...zero value (e.g., 1e-20)
+%---------------------------------------------------------------------------------------------------------------------------------
+0.0015	;% Minimum lateral inflows for the reach (m3/s)
+0.0015	;% Maximum lateral inflows for the reach (m3/s)
+0		;% Minimum lateral outflows for the reach (m3/s)
+0		;% Maximum lateral outflows for the reach (m3/s)
+0		;% Minimum lateral inflow C for the reach (m3/s)
+0		;% Maximum lateral inflow C for the reach (m3/s)
+%---------------------------------------------------------------------------------------------------------------------------------
+% DECAY PARAMETERS AND RANGES (set both MIN and MAX values of each to zero to omit decay)
+% - Use zeros for both min and max to zero-out the parameter
+% - Min and max values must be non-zero for a range to be simulated. Use an infinitesimally small lower-end to approximate a...
+%	...zero value (e.g., 1e-20)
+%---------------------------------------------------------------------------------------------------------------------------------
+0		;% Minimum value for lambda: in-stream first order decay (s-1)
+0		;% Minimum value for lambda: in-stream first order decay (s-1)
+0		;% Minimum value for lambda2: storage zone first order decay (s-1)
+0		;% Minimum value for lambda2: storage zone first order decay (s-1)
+%---------------------------------------------------------------------------------------------------------------------------------
+% SORPTION PARAMETERS AND RANGES (set both MIN and MAX values of each to zero to omit sorption)
+% - Use zeros for both min and max to zero-out the parameter
+% - Min and max values must be non-zero for a range to be simulated. Use an infinitesimally small lower-end to approximate a...
+%	...zero value (e.g., 1e-20)
+%---------------------------------------------------------------------------------------------------------------------------------
+0		;% Minimum value for lambda hat (s-1)
+0		;% Maximum value for lambda hat (s-1)
+0		;% Minimum value for lambda hat 2 (s-1)
+0		;% Maximum value for lambda hat 2 (s-1)
+0		;% Minimum value for rho (g/m3)
+0		;% Maximum value for rho (g/m3)
+0		;% Minimum value for Kd (m3/g)
+0		;% Maximum value for Kd (m3/g)
+0		;% Minimum value for Cbackground (mg/L)
+0		;% Maximum value for Cbackground (mg/L)
+%---------------------------------------------------------------------------------------------------------------------------------
+% CONTROL OF MODEL OUTPUTS
+% - WARNING - using "1" for output full BTCs may generate very large files, but is required for some MCAT Tools
+% - The following MCAT tools require 10 or less metrics input to function: 
+% 		- Multi-objective plots
+% 		- Simulation Pixel plots
+% 		- Time-series Surface plots
+%---------------------------------------------------------------------------------------------------------------------------------
+1		;% Output full BTCs? (0 = no; 1 = yes)
+0		;% Output metric-parameter box plots? (0 = no; 1 = yes)
+10		;% What percentage of results should be included in the box plots and default MCAT visualization? (5 = top 5% for each metric)
+0		;% Which metrics to feed into MCAT? (0 = all metrics, 1 = select a list of 10 metrics)
+
+

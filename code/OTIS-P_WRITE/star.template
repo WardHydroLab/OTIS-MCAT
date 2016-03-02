@@ -1,0 +1,47 @@
+##########################################################################
+#
+#
+#                     STARPAC Parameter Input File
+#                                                       Rob Runkel 3/11/95
+#
+##########################################################################
+#
+#  Record Types 1-4, Integer values in Columns 1-5
+#  -----------------------------------------------
+#  IWEIGHT   Weight Revision Option
+#  IVAPRX    Variance/Covariance Option
+#  MIT       Maximum Number of Iterations
+#  NPRT      STARPAC Print Option
+#
+0
+1
+100
+22222
+#
+#  Record Types 5-7, Double precision values in Columns 1-13
+#  ---------------------------------------------------------
+#  DELTA     Maximum Scaled Change, First Iteration
+#  STOPP     Stopping Value for Parameter Convergence
+#  STOPSS    Stopping Value for Sum of Square Convergence
+#
+1.0
+1.D-5
+1.D-5
+#
+# For each of the ten model parameters, enter IFIXED (Integer, Col. 1-5)
+# and SCALE (Floating Point, Col 6-18).
+#
+#IFXD SCALE
+#    |                 | IFIXED and SCALE for:
+#---------------------------------------------
+
+
+
+
+
+
+
+
+
+
+

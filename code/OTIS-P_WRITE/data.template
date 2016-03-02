@@ -1,0 +1,21 @@
+########################################################################
+#
+#                        OTIS-P data file
+#
+#
+#    line     for J = 1, NREACH
+#    ----              
+#     1       N - Number of observations for reach J.
+#     2-N+1   TIME (time-variable) or DIST (steady-state) associated
+#             with each observation (col. 1-15) and CONC (col. 16-30).
+#
+#
+#     Clackamas River Rhodamine - July 1992
+#     Data from Laenen and Risley (1997)
+#
+########################################################################
+#
+#  Observations at downstream end of reach
+#
+
+

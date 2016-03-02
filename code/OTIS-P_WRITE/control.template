@@ -1,0 +1,25 @@
+########################################################################
+#
+#                        OTIS-P control file
+#
+#
+#    line              name of the:
+#    ----              --------------
+#     1                parameter file
+#     2                flow file
+#     3                data file
+#     4                STARPAC input file
+#     5                parameter output file
+#     6                STARPAC output file
+#     7                solute output file
+#     8                sorption output file (ISORB=1 only)
+#
+########################################################################
+params.inp
+q.inp
+data.inp
+star.inp
+params.out
+star.out
+solute.out
+

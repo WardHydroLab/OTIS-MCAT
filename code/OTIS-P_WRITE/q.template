@@ -1,0 +1,33 @@
+#
+#                   OTIS Discharge Input File
+#
+#
+#----------------------------------------------------------
+#                       Flow Conditions 
+#
+# QSTEP 				Change-in-flow indicator, time-step for updating flow changes (steady-state conditions = 0.0)
+# QSTART(m^3/second) 	Discharge at upstream boundary
+#
+# QSTEP 
+#-------------
+                
+#                
+#QSTART
+#-------------
+                
+#
+#----------------------------------------------------------
+#                     Hydrologic Parameters
+#                       for I = 1, NREACH
+#
+# QLATIN(m^3 sec-1 m-1) 	Lateral inflow rate 
+# QLATOUT(m^3 sec-1 m-1) 	Lateral outflow rate
+# AREA(m^2) 				Channel cross-sectional area
+# CLATIN(mg/l) 				Lateral inflow solute concentration (repeats for each solute modeled)
+#
+#QLATIN       QLATOUT      AREA         (CLATIN J=1,NSOLUTE)
+#            |            |            |            
+#----------------------------------------------------------
+
+
+

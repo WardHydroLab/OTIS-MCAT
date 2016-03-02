@@ -1,0 +1,107 @@
+#
+#                        OTIS Parameter Input File
+#
+#                        
+#
+# Simulation Title
+#------------------------------
+OTIS Parameter Estimation Input
+#---------------------------------------------------------
+#  PRTOPT					Format of solute output files (1=main channel only, 2=main channel and storage zone)
+#  PSTEP  [hours]			Time interval at which results are printed (check solution integration time step)
+#  TSTEP  [hours]			Integration time step (0=steady state solution, >0=time variable solution)
+#  TSTART [hour]			Simulation start time
+#  TFINAL [hour]			Simulation end time
+#  XSTART [L]				Stream distance at upstream boundary (usaully 0)
+#  DSBOUND [(L/sec)mg/L]	Downstream boundary condition describes conc. gradient at dowstream boundary (usually 0)
+#  NREACH					Number of modeled reachesPrint Option = PRTOPT
+#---------------------------------------------------------
+            
+      
+     
+      
+      
+           
+          
+                 
+#---------------------------------------------------------
+#
+#              Physical Parameters
+#               for I = 1, NREACH
+# 
+#  NSEG				Number of x-sectional segments within the reach. Max of 5000 (RCLEN/2 seems to work well)
+#  RCLEN(m)			Reach length   
+#  DISP(m^2/sec)	Dispersion
+#  AREA2(m^2)		Transient storage zone area (must be a non-zero value) 
+#  ALPHA(sec-1)		Transient storage exchange coefficient 
+#
+#NSEG RCHLEN       DISP         AREA2        ALPHA
+#    |            |            |            |
+#----------------------------------------------------------
+
+#----------------------------------------------------------
+#
+#        Number of Solutes and flags for decay and sorption
+#
+#  NSOLUTE  	Number of solutes (max of 3 for OTIS, 1 for OTIS-P)
+#  IDECAY 		Decay option (0 = OFF)
+#  ISORB 		Sorption option (0 = OFF)
+#
+# NSOLUTE 	IDECAY	 ISORB
+#    |    | 
+#----------------------------------------------------------
+
+#----------------------------------------------------------
+#
+#  Decay Coefficients (IDECAY=1, only)
+#
+#                    for I = 1, NREACH
+#
+#LAMBDA       LAMBDA2
+#            |
+#----------------------------------------------------------
+
+#----------------------------------------------------------
+#
+#  Sorption Parameters (ISORB=1, only)
+#
+#                    for I = 1, NREACH
+#
+#LAMHAT       LAMHAT2      RHO          KD           CSBACK
+#            |            |            |            |
+#----------------------------------------------------------
+
+#----------------------------------------------------------
+#                 Print Information
+#                 for I = 1, NPRINT 
+#
+#  NPRINT		Number of locations along the stream where output is desired
+#  IOPT			Interpolation option for print locations (1=linear interpolation used, 0=nearest upstream segment value used)
+#  PRINTLOC 	Downstream distance to a given print location, repeated NPRINT times (max of 30)   
+#
+# NPRINT   IOPT 
+#    |
+#-------------------
+   
+#
+# PRTLOC
+#-------------------       
+
+#               
+#----------------------------------------------------------
+#         Time-Variable Upstream Boundary Conditions
+#                 for I = 1, NBOUND
+#
+#  NBOUND					Define total number of upstream boundary time steps (max of 200) 
+#  IBOUND					Boundary condition option (1=concentration step profile, 2=flux step profile, 3=concentration continuous profile)
+#  USTIME(hour)				Define each time step (max of 200)    
+#  USBC(mg/l; mg/l m^3/sec) 	Solute concentration values corresponding to each USTIME (units depend on IBOUND)
+#
+#NBOUND  IBOUND
+#    | 
+#--------------------
+                
+#
+# USTIME     | USBC (for i=1,NSOLUTE)                       
+#--------------------
+                          

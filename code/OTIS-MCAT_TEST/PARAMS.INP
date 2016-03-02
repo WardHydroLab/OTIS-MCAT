@@ -1,0 +1,210 @@
+#
+#                        OTIS Parameter Input File
+#
+#                        
+#
+# Simulation Title
+#------------------------------
+OTIS Parameter Estimation Input
+#---------------------------------------------------------
+#  PRTOPT					Format of solute output files (1=main channel only, 2=main channel and storage zone)
+#  PSTEP  [hours]			Time interval at which results are printed (check solution integration time step)
+#  TSTEP  [hours]			Integration time step (0=steady state solution, >0=time variable solution)
+#  TSTART [hour]			Simulation start time
+#  TFINAL [hour]			Simulation end time
+#  XSTART [L]				Stream distance at upstream boundary (usaully 0)
+#  DSBOUND [(L/sec)mg/L]	Downstream boundary condition describes conc. gradient at dowstream boundary (usually 0)
+#  NREACH					Number of modeled reachesPrint Option = PRTOPT
+#---------------------------------------------------------
+1
+ 0.004167
+ 0.004167
+ 8.016667
+78.000000
+ 0.000000
+ 0.000000
+1
+#---------------------------------------------------------
+#
+#              Physical Parameters
+#               for I = 1, NREACH
+# 
+#  NSEG				Number of x-sectional segments within the reach. Max of 5000 (RCLEN/2 seems to work well)
+#  RCLEN(m)			Reach length   
+#  DISP(m^2/sec)	Dispersion
+#  AREA2(m^2)		Transient storage zone area (must be a non-zero value) 
+#  ALPHA(sec-1)		Transient storage exchange coefficient 
+#
+#NSEG RCHLEN       DISP         AREA2        ALPHA
+#    |            |            |            |
+#----------------------------------------------------------
+  781          781     1.317377     0.222600     0.004217
+#----------------------------------------------------------
+#
+#        Number of Solutes and flags for decay and sorption
+#
+#  NSOLUTE  	Number of solutes (max of 3 for OTIS, 1 for OTIS-P)
+#  IDECAY 		Decay option (0 = OFF)
+#  ISORB 		Sorption option (0 = OFF)
+#
+# NSOLUTE 	IDECAY	 ISORB
+#    |    | 
+#----------------------------------------------------------
+    1    0    0
+#----------------------------------------------------------
+#
+#  Decay Coefficients (IDECAY=1, only)
+#
+#                    for I = 1, NREACH
+#
+#LAMBDA       LAMBDA2
+#            |
+#----------------------------------------------------------
+#----------------------------------------------------------
+#
+#  Sorption Parameters (ISORB=1, only)
+#
+#                    for I = 1, NREACH
+#
+#LAMHAT       LAMHAT2      RHO          KD           CSBACK
+#            |            |            |            |
+#----------------------------------------------------------
+#----------------------------------------------------------
+#                 Print Information
+#                 for I = 1, NPRINT 
+#
+#  NPRINT		Number of locations along the stream where output is desired
+#  IOPT			Interpolation option for print locations (1=linear interpolation used, 0=nearest upstream segment value used)
+#  PRINTLOC 	Downstream distance to a given print location, repeated NPRINT times (max of 30)   
+#
+# NPRINT   IOPT 
+#    |
+#-------------------
+    1    0
+#
+# PRTLOC
+#-------------------       
+581.000000
+#               
+#----------------------------------------------------------
+#         Time-Variable Upstream Boundary Conditions
+#                 for I = 1, NBOUND
+#
+#  NBOUND					Define total number of upstream boundary time steps (max of 200) 
+#  IBOUND					Boundary condition option (1=concentration step profile, 2=flux step profile, 3=concentration continuous profile)
+#  USTIME(hour)				Define each time step (max of 200)    
+#  USBC(mg/l; mg/l m^3/sec) 	Solute concentration values corresponding to each USTIME (units depend on IBOUND)
+#
+#NBOUND  IBOUND
+#    | 
+#--------------------
+  106    3
+#
+# USTIME     | USBC (for i=1,NSOLUTE)                       
+#--------------------
+     0.000000     3.760000
+     8.016667     3.760000
+     8.500000     3.670000
+     8.533333     3.730000
+     8.566667     3.660000
+     8.600000     3.690000
+     8.633333     3.730000
+     8.666667     5.580000
+     8.700000     8.440000
+     8.766667    10.610000
+     8.800000    10.910000
+     8.833333    11.140000
+     8.866667    11.220000
+     8.900000    11.410000
+     8.933333    11.490000
+     8.966667    11.490000
+     9.000000    11.610000
+     9.033333    11.490000
+     9.066667    11.470000
+     9.100000    11.590000
+     9.133333    11.470000
+     9.166667    11.470000
+     9.233333    11.550000
+     9.300000    11.470000
+     9.366667    11.470000
+     9.433333    11.430000
+     9.500000    11.470000
+     9.566667    11.470000
+     9.633333    11.430000
+     9.700000    10.990000
+     9.766667    11.410000
+     9.833333    11.480000
+    10.000000    11.680000
+    10.166667    11.630000
+    10.333333    11.520000
+    10.500000    11.540000
+    10.666667    11.560000
+    10.833333    11.370000
+    11.000000    11.460000
+    11.166667    11.400000
+    11.333333    11.440000
+    11.500000    10.230000
+    11.533333    10.510000
+    11.566667    10.990000
+    11.600000    11.220000
+    11.633333    11.210000
+    11.666667     9.050000
+    11.700000     6.470000
+    11.733333     5.220000
+    11.766667     4.600000
+    11.800000     4.280000
+    11.833333     4.180000
+    11.866667     4.010000
+    11.900000     3.950000
+    11.933333     3.930000
+    11.966667     3.860000
+    12.000000     3.850000
+    12.033333     3.960000
+    12.066667     3.810000
+    12.100000     3.790000
+    12.133333     3.760000
+    12.166667     3.730000
+    12.233333     3.720000
+    12.300000     3.710000
+    12.366667     3.710000
+    12.433333     3.720000
+    12.500000     3.710000
+    12.566667     3.670000
+    12.633333     3.670000
+    12.700000     3.700000
+    12.766667     3.710000
+    12.833333     3.710000
+    13.000000     3.670000
+    13.166667     3.640000
+    13.333333     3.660000
+    13.500000     3.640000
+    13.666667     3.660000
+    13.833333     3.640000
+    14.000000     3.750000
+    14.166667     3.680000
+    14.333333     3.700000
+    15.166667     3.700000
+    15.683333     3.830000
+    16.166667     3.740000
+    16.683333     3.880000
+    17.166667     3.660000
+    17.683333     3.720000
+    18.683333     3.760000
+    19.683333     3.720000
+    20.683333     3.740000
+    21.683333     3.830000
+    22.683333     3.800000
+    23.683333     3.930000
+    24.683333     4.060000
+    25.683333     4.100000
+    26.683333     4.110000
+    27.683333     4.080000
+    28.683333     4.160000
+    29.683333     4.500000
+    30.683333     4.460000
+    31.683333     4.280000
+    32.683333     4.410000
+    33.683333     4.380000
+    34.683333     4.510000
+    35.683333     4.390000
+    78.000000     4.390000

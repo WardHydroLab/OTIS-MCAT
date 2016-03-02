@@ -1,0 +1,68 @@
+%-----------------------------------------------------------------------------------------
+% SYSTEM CONFIGURATION, ACTIONS
+%-----------------------------------------------------------------------------------------
+1		;% OS (1 = Windows, 2 = UNIX)
+0		;% Run MC Simulations? (1 = yes, 0 = no)
+1		;% Launch MCAT? (1 = yes, 0 = no)
+0		;% Show waitbar while simulations are being calculated? (1 = yes, 0 = no)
+%-----------------------------------------------------------------------------------------
+% BASIC MODEL CONTROLS SET IN THIS SECTION
+%-----------------------------------------------------------------------------------------
+15		;% dt - timestep for calculations (s)
+1		;% dx - spatial step for calculations (m)
+0.0125	;% Qstart - discharge at upstream end of model (m3/s)
+581		;% Length of study reach between observation points (m)
+50000   ;% Number of Parameter Sets to test in simulation
+0		;% Random seed (0 = use clock; any positive integer = re-createable)
+%-----------------------------------------------------------------------------------------
+% OTIS PARAMETERS AND RANGES
+%-----------------------------------------------------------------------------------------
+1e-2	;% DISP minimum value (m2/s)
+10		;% DISP maximum value (m2/s)
+1e-5	;% ALPHA minimum value (s-1)
+1e-1	;% ALPHA maximum value (s-1)
+1e-2	;% A_S minimum value (m2)
+1		;% A_S maximum value (m2)
+2		;% AREAFLAG (1 = estimate area & specify relative bounds; 2 = specify range)
+0.1		;% AREA minimum value, (if AREAFLAG = 1, as AGUESS*__ ; if AREAFLAG = 2, AMIN m2)
+1.0		;% AREA maximum value, (if AREAFLAG = 1, as AGUESS*__ ; if AREAFLAG = 2, AMAX m2)
+%-----------------------------------------------------------------------------------------
+% DISCHARGE PARAMETERS AND RANGES
+%-----------------------------------------------------------------------------------------
+0.0015	;% Minimum lateral inflows for the reach (m3/s)
+0.0015	;% Maximum lateral inflows for the reach (m3/s)
+0		;% Minimum lateral outflows for the reach (m3/s)
+0		;% Maximum lateral outflows for the reach (m3/s)
+0		;% Minimum lateral inflow C for the reach (m3/s)
+0		;% Maximum lateral inflow C for the reach (m3/s)
+%-----------------------------------------------------------------------------------------
+% DECAY PARAMETERS AND RANGES 
+%-----------------------------------------------------------------------------------------
+0		;% Minimum value for lambda: in-stream first order decay (s-1)
+0		;% Minimum value for lambda: in-stream first order decay (s-1)
+0		;% Minimum value for lambda2: storage zone first order decay (s-1)
+0		;% Minimum value for lambda2: storage zone first order decay (s-1)
+%-----------------------------------------------------------------------------------------
+% SORPTION PARAMETERS AND RANGES 
+%-----------------------------------------------------------------------------------------
+0		;% Minimum value for lambda hat (s-1)
+0		;% Maximum value for lambda hat (s-1)
+0		;% Minimum value for lambda hat 2 (s-1)
+0		;% Maximum value for lambda hat 2 (s-1)
+0		;% Minimum value for rho (g/m3)
+0		;% Maximum value for rho (g/m3)
+0		;% Minimum value for Kd (m3/g)
+0		;% Maximum value for Kd (m3/g)
+0		;% Minimum value for Cbackground (mg/L)
+0		;% Maximum value for Cbackground (mg/L)
+%-----------------------------------------------------------------------------------------
+% CONTROL OF MODEL OUTPUTS
+%-----------------------------------------------------------------------------------------
+1		;% Output full BTCs? (0 = no; 1 = yes)
+0		;% Output metric-parameter box plots? (0 = no; 1 = yes)
+10		;% Default percentage of results to include in outputs? (e.g., 10 = 10%)
+1		;% Which metrics to feed into MCAT? (0 = all metrics, 1 = select a list of 10)
+0		;% Output plots of CIs? (0 = no; 1 = yes)
+
+
+

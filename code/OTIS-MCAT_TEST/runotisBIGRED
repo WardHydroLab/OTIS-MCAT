@@ -1,0 +1,12 @@
+ #!/bin/bash 
+ #PBS -l nodes=1:ppn=32
+ #PBS -l walltime=00:10:00
+ #PBS -l gres=ccm
+ #PBS -m ae
+ #PBS -M adamward@indiana.edu
+ #PBS -N OTISTEST
+ #PBS -V
+ 
+ cd /N/u/adamward/BigRed2/Uvas_WideA
+
+ ccmrun matlab -r OTISMCAT
