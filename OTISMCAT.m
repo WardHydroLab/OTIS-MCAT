@@ -1,3 +1,5 @@
+%Code Maintained at: https://github.com/WardHydroLab/OTIS-MCAT
+
 %Clear the workspace, close figures, clear command line
     clear
     close all
