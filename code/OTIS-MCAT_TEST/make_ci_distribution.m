@@ -25,6 +25,9 @@ m = [0.2 0.1 0.05 0.01 0.005 0.001];   %behavioral thresholds used to make plot
 minhist = 0;
 maxhist = 80;
    
+%Set Colormap to the default for the user's version of Matlab
+MAP = colormap;
+
 %Loop through all of the different parameters included in these data
 for parcol=1:size(pars,2)
 	%Grab the raw parameter values
@@ -37,12 +40,12 @@ for parcol=1:size(pars,2)
         set(gcf,'Color',[1 1 1]);
         
         
-    t = linspace(min(partemp),max(partemp),nbins);
+    temp = linspace(min(partemp),max(partemp),nbins);
     
     
     for i = 1:length(m);
         p1 = partemp(b(1:round((n*m(i)))),1);
-        [c1,d1] = hist(p1,t);
+        [c1,d1] = hist(p1,temp);
         plot(d1,100*c1./(sum(c1)),'Color',MAP(i*floor(64/length(m)),:),'LineWidth',2);hold on;
     end;
     plot([partemp(b(1)) partemp(b(1))],[0 100*max(c1)./(sum(c1))+10],'Color',[0.5 0.5 0.5]);

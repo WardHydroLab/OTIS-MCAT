@@ -33,8 +33,8 @@
 0.0015	;% Maximum lateral inflows for the reach (m3/s)
 0		;% Minimum lateral outflows for the reach (m3/s)
 0		;% Maximum lateral outflows for the reach (m3/s)
-0		;% Minimum lateral inflow C for the reach (m3/s)
-0		;% Maximum lateral inflow C for the reach (m3/s)
+0		;% Minimum lateral inflow C for the reach (g/m3)
+0		;% Maximum lateral inflow C for the reach (g/m3)
 %-----------------------------------------------------------------------------------------
 % DECAY PARAMETERS AND RANGES 
 %-----------------------------------------------------------------------------------------
@@ -53,16 +53,13 @@
 0		;% Maximum value for rho (g/m3)
 0		;% Minimum value for Kd (m3/g)
 0		;% Maximum value for Kd (m3/g)
-0		;% Minimum value for Cbackground (mg/L)
-0		;% Maximum value for Cbackground (mg/L)
+0		;% Minimum value for Cbackground (g/m3)
+0		;% Maximum value for Cbackground (g/m3)
 %-----------------------------------------------------------------------------------------
 % CONTROL OF MODEL OUTPUTS
 %-----------------------------------------------------------------------------------------
 1		;% Output full BTCs? (0 = no; 1 = yes)
-0		;% Output metric-parameter box plots? (0 = no; 1 = yes)
+1		;% Output metric-parameter box plots? (0 = no; 1 = yes)
 10		;% Default percentage of results to include in outputs? (e.g., 10 = 10%)
-1		;% Which metrics to feed into MCAT? (0 = all metrics, 1 = select a list of 10)
-0		;% Output plots of CIs? (0 = no; 1 = yes)
-
-
-
+0		;% Which metrics to feed into MCAT? (0 = all metrics, 1 = select a list of 10)
+1		;% Output plots of CIs? (0 = no; 1 = yes)

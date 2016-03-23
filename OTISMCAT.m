@@ -218,18 +218,21 @@ end
 run code/OTIS-MCAT_TEST/BuildMCATInput.m
 disp('MCAT input files built successfully')
 
-% Make and save parameter-metric boxplots if requested
-if BOXFLAG==1
-    disp('Creating and saving boxplots')
-    run code/OTIS-MCAT_TEST/makeboxplots.m
+% Make and save parameter-metric boxplots if requested and if all vars used
+if METRICS==0
+    if BOXFLAG==1
+        disp('Creating and saving boxplots')
+        run code/OTIS-MCAT_TEST/makeboxplots.m
+    else
+        disp('Box Plots not requested')
+    end
 else
-    disp('Box Plots not requested')
+        disp('Box Plots suppressed because Line 64 = 1 in input file')
 end
-
 
 %Figures of dotty plots and CI Distribution
 if CIFLAG==1
-    disp('Creating and saving boxplots')
+    disp('Creating and saving CI distributions')
     run code/OTIS-MCAT_TEST/make_ci_distribution.m
 else
     disp('CI Distributions not requested')

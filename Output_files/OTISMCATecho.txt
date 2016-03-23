@@ -1,4 +1,4 @@
-Run Start: 02-Mar-2016 09:39:19
+Run Start: 23-Mar-2016 12:15:16
 OTIS_MCAT_CONTROL.txt read correctly
 upstream.csv read correctly
 downstream.csv read correctly
@@ -7,31 +7,11 @@ Monte Carlo runs not requested
 Simulations not conducted, attempting to load existing output files
 MCRunData.mat loaded successfully
 BTCs.mat loaded successfully
-Pick 10 objective functions to evaluate in MCAT:
-1. RMSE       2. r2 (transf)    3. log RMSE;  4. log R2
-5.M1;         6.M1norm          7. mu2       8. mu2norm
-9. mu3;       10. mu3norm       11. skewness 12. skewnessnorm
-13. App. Dispersivity           14. App. Dispersion
-15. Holdback; 16. t05           17. t10;      18. t25
-19. t50       20. t75           21. t90;      22. t95
-23. t99       24. t05norm       25. t10norm  26. t25norm
-27. t50norm   28. t75norm       29. t90norm   30. t95norm
-31. t at Peak     32. C peak    33. Cnorm Peak
-Select up to 10 objective functions for MCAT analysis:
-(Leave field blank and press return to skip a field and include less than 10 objective functions)
-Objective function 1: 1
-Objective function 2: 
-Objective function 3: 
-Objective function 4: 3
-Objective function 5: 
-Objective function 6: 
-Objective function 7: 6
-Objective function 8: 
-Objective function 9: 
-Objective function 10: 
+All metrics being input to MCAT
 MCAT input files built successfully
-Box Plots not requested
-CI Distributions not requested
+Creating and saving boxplots
+Creating and saving CI distributions
 OTIS-P *.out files already exist
 No OTIS-P files were written
 Launching MCAT - OTISMCAT.m run complete
+Run End: 23-Mar-2016 12:15:24
