@@ -98,10 +98,10 @@
     %observational data set
 
     %Starting time at first upstream observations
-        TSTART=min(USTIME);
+        TSTART=min([OBSTIME;USTIME]);
     
     %ending time at last downstream observation
-        TEND=max(OBSTIME);    
+        TEND=max([OBSTIME;USTIME]);    
     
     %LIMIT IS 200 POINS.
     
@@ -816,9 +816,7 @@ for i = 1:N
         
     %Interpolate simulation times to model times
         Sim = interp1(Model.ctime,Model.conc,OBSTIME);
-        %plot(OBSTIME,OBSCONC,'.',Model.ctime,Model.conc,'.',usboundtimes,usboundconcs),legend('obs','mod')
-        %keyboard
-        
+
     %Store model output data
         if BTCFLAG==1
             MOD(i,:)= Sim; %(skipped because the files get wildly large)
