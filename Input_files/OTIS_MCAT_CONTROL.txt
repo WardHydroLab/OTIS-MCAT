@@ -60,6 +60,6 @@
 %-----------------------------------------------------------------------------------------
 1		;% Output full BTCs? (0 = no; 1 = yes)
 1		;% Output metric-parameter box plots? (0 = no; 1 = yes)
-10		;% Default percentage of results to include in outputs? (e.g., 10 = 10%)
+100	;% Default percentage of results to include in outputs? (e.g., 10 = 10%)
 0		;% Which metrics to feed into MCAT? (0 = all metrics, 1 = select a list of 10)
 1		;% Output plots of CIs? (0 = no; 1 = yes)
