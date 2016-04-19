@@ -99,10 +99,10 @@
     %observational data set
 
     %Starting time at first upstream observations
-        TSTART=min(USTIME);
+        TSTART=min([USTIME;OBSTIME]);
     
     %ending time at last downstream observation
-        TEND=max(OBSTIME);    
+        TEND=max([USTIME;OBSTIME]);    
     
     %LIMIT IS 200 POINS.
     
