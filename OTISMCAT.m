@@ -92,7 +92,11 @@
 
     disp('OTIS_MCAT_CONTROL.txt read correctly');
 
-
+% WARN USER IF TOO FEW SIMULATIONS ARE REQUESTED
+    if N<1000
+        disp('N<1000 - some functionality may be limited')
+        disp('including Boxplot and CI visualizations')
+    end
 
 % READ IN THE UPSTREAM BOUNDARY AND DOWNSTREAM OBSERVATIONS
     %read-in upstream data
