@@ -245,7 +245,7 @@ end
 
 % Write-out the files for OTIS-P to be run by the user if outputs from 
 % OTIS-P do not already exist
-
+if sim==1
     if exist('OTIS-P_files/star.out')==0
         %execute a file to build OTIS-P inputs with the best-fit
         %Monte Carlo version here
@@ -263,7 +263,9 @@ end
         disp('OTIS-P *.out files already exist')
         disp('No OTIS-P files were written')
     end    
-
+else
+    disp('No OTIS-P files because simulations were not run')
+end
     
     
 % Launch the Monte Carlo Analysis Toolbox
