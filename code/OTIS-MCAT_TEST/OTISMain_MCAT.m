@@ -94,15 +94,14 @@
    
 %Make a vector of times to use at the upstream boundary
 
-
     %Grab some times that define the start and end points of the
     %observational data set
 
     %Starting time at first upstream observations
-        TSTART=min([USTIME;OBSTIME]);
+        TSTART=min(USTIME);
     
     %ending time at last downstream observation
-        TEND=max([USTIME;OBSTIME]);    
+        TEND=max(OBSTIME);    
     
     %LIMIT IS 200 POINS.
     
@@ -141,29 +140,83 @@
         usboundtimes=USTIME;
         usboundconcs=USCONC;
     end
-    
             
-%Add a point for t=0 if it is not already present
-    if usboundtimes(1)~=0
-        usboundtimes=[0;usboundtimes];
-        usboundconcs=[usboundconcs(1);usboundconcs];
+    %Add a point for t=0 if it is not already present
+        if usboundtimes(1)~=0
+            usboundtimes=[0;usboundtimes];
+            usboundconcs=[usboundconcs(1);usboundconcs];
+        end
+
+    %Add a point for t = 2*Tend to force the model at late times
+        usboundtimes=[usboundtimes;2*TEND];
+        usboundconcs=[usboundconcs;usboundconcs(end)];
+
+
+    %Make vectors of observed u/s and d/s concentration timeseries
+        Upbound=[usboundtimes usboundconcs];
+
+    %store these in the Instate vector   
+        Instate.USTIME_USBC=Upbound;
+        Instate.NBOUND=size(Upbound,1);
+
+
+
+%Make a vector of times to use at the DOWNSTREAM boundary
+
+    %Grab some times that define the start and end points of the
+    %observational data set
+
+    %Starting time at first upstream observations
+        TSTART=min(USTIME);
+    
+    %ending time at last downstream observation
+        TEND=max(OBSTIME);    
+    
+    %LIMIT IS 200 POINS.
+    
+    if length(OBSTIME)>198
+    %ASSIGNED HERE AS:
+
+    % 50 points from Tstart to Tpeak
+        stemp=TSTART;
+        etemp=tpeakds;
+        step=(etemp-stemp)/49;
+        t1=[stemp:step:etemp];
+        
+    % 50 points from peak to 2*tpeak
+        stemp=etemp+step;
+        etemp=2*tpeakds;
+        step=(etemp-stemp)/49;
+        t2=[stemp:step:etemp];
+    % 98 points from 2*tpeak to Tend
+        stemp=etemp+step;
+        etemp=TEND;
+        step=(etemp-stemp)/97;
+        t3=[stemp:step:etemp];
+
+        
+    
+    %slam these 3 segments together into one vector
+        dsboundtimes=[t1,t2,t3]';
+    
+       
+    clear t1 t2 t3 stemp etemp step
+    
+
+    %linear interpolation to calc the concs that go with these times
+        dsboundconcs=interp1(OBSTIME,OBSCONC,dsboundtimes);
+        
+        Data.time = dsboundtimes;
+        Data.solute = dsboundconcs;
+        OBSTIME = dsboundtimes;
+        OBSCONC = dsboundconcs;
+        
+    else
+        Data.time   = OBSTIME;  
+        Data.solute = OBSCONC; 
     end
-    
-%Add a point for t = 2*Tend to force the model at late times
-    usboundtimes=[usboundtimes;2*TEND];
-    usboundconcs=[usboundconcs;usboundconcs(end)];
+            
 
-
-%Make vectors of observed u/s and d/s concentration timeseries
-    Upbound=[usboundtimes usboundconcs];
-
-    
-Instate.USTIME_USBC=Upbound;
-Instate.NBOUND=size(Upbound,1);
-
-%Data.Period(:,1) = 1:length(OBSERVED); 
-Data.time   = OBSTIME;  
-Data.solute = OBSCONC; 
     
 %Set Model Solution Conditions and Output Structure
     Instate.TSTART=TSTART;
