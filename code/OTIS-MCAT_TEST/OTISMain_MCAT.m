@@ -178,21 +178,40 @@
     %ASSIGNED HERE AS:
 
     % 50 points from Tstart to Tpeak
-        stemp=TSTART;
+        stemp=min(OBSTIME);
         etemp=tpeakds;
         step=(etemp-stemp)/49;
+        if step<dt
+            step2=step.*(ceil((dt/3600)./step));
+            t1=[stemp:step2:etemp];
+            clear step2
+        else
         t1=[stemp:step:etemp];
+        end
         
     % 50 points from peak to 2*tpeak
         stemp=etemp+step;
-        etemp=2*tpeakds;
+        etemp=((TEND-tpeakds)/2)+tpeakds; % edited this line, 2*tpeak can be outside of range and cause series to go backward
         step=(etemp-stemp)/49;
+        if step<dt
+            step2=step.*(ceil((dt/3600)./step));
+            t2=[stemp:step2:etemp];
+            clear step2
+        else
         t2=[stemp:step:etemp];
+        end
+        
     % 98 points from 2*tpeak to Tend
         stemp=etemp+step;
         etemp=TEND;
         step=(etemp-stemp)/97;
+        if step<dt
+            step2=step.*(ceil((dt/3600)./step));
+            t3=[stemp:step2:etemp];
+            clear step2
+        else
         t3=[stemp:step:etemp];
+        end
 
         
     
