@@ -39,9 +39,9 @@
 % DECAY PARAMETERS AND RANGES 
 %-----------------------------------------------------------------------------------------
 0		;% Minimum value for lambda: in-stream first order decay (s-1)
-0		;% Minimum value for lambda: in-stream first order decay (s-1)
+0		;% Maximum value for lambda: in-stream first order decay (s-1)
 0		;% Minimum value for lambda2: storage zone first order decay (s-1)
-0		;% Minimum value for lambda2: storage zone first order decay (s-1)
+0		;% Maximum value for lambda2: storage zone first order decay (s-1)
 %-----------------------------------------------------------------------------------------
 % SORPTION PARAMETERS AND RANGES 
 %-----------------------------------------------------------------------------------------

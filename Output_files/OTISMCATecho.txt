@@ -1,17 +1,42 @@
-Run Start: 23-Mar-2016 12:15:16
+Run Start: 18-Apr-2016 14:59:07
 OTIS_MCAT_CONTROL.txt read correctly
 upstream.csv read correctly
 downstream.csv read correctly
 Results Saved as BTCAnalysis.csv
-Monte Carlo runs not requested
-Simulations not conducted, attempting to load existing output files
-MCRunData.mat loaded successfully
-BTCs.mat loaded successfully
-All metrics being input to MCAT
-MCAT input files built successfully
-Creating and saving boxplots
-Creating and saving CI distributions
-OTIS-P *.out files already exist
-No OTIS-P files were written
-Launching MCAT - OTISMCAT.m run complete
-Run End: 23-Mar-2016 12:15:24
+Beginning Monte Carlo simulations
+<a href="matlab: opentoline('/Users/adamward/Documents/_work/GitHub/OTIS-MCAT/code/OTIS-MCAT_TEST/OTISMain_MCAT.m',102,1)">102 </a>        TSTART=min(USTIME);
+whos USTIME
+  Name          Size            Bytes  Class     Attributes
+
+  USTIME      105x1               840  double              
+
+whos USTIME OBSTIME
+  Name           Size            Bytes  Class     Attributes
+
+  OBSTIME       77x1               616  double              
+  USTIME       105x1               840  double              
+
+USTIME(1)
+
+ans =
+
+    7.9333
+
+OBSTIME(1)
+
+ans =
+
+    7.9167
+
+min(USTIME;OBSTIME)
+ min(USTIME;OBSTIME)
+           |
+{Error: Unbalanced or unexpected parenthesis or bracket.
+} 
+min([USTIME;OBSTIME])
+
+ans =
+
+    7.9167
+
+dbquit
