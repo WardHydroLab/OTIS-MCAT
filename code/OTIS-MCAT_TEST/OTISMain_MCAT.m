@@ -167,10 +167,10 @@
     %observational data set
 
     %Starting time at first upstream observations
-        TSTART=min(USTIME);
+        TSTART=min([min(USTIME),min(OBSTIME)]);
     
     %ending time at last downstream observation
-        TEND=max(OBSTIME);    
+        TEND=max([max(USTIME),max(OBSTIME)]);    
     
     %LIMIT IS 200 POINS.
     
@@ -306,13 +306,13 @@
     %run a check
     if junk.(sprintf('%sMIN',param))==0 & junk.(sprintf('%sMAX',param))~=0 
         disp(sprintf('Error in values for %s; MIN cannot be 0 with non-zero MAX',param))
-        break
+        return
     elseif junk.(sprintf('%sMIN',param))~=0 & junk.(sprintf('%sMAX',param))==0 
         disp(sprintf('Error in values for %s; MAX cannot be 0 with non-zero MIN',param))
-        break     
+        return     
     elseif junk.(sprintf('%sMIN',param))>junk.(sprintf('%sMAX',param)) 
         disp(sprintf('Error in values for %s; Specified MIN > MAX',param))
-        break 
+        return 
     end
 
     %if both are zeros
@@ -338,13 +338,13 @@
     %run a check
     if junk.(sprintf('%sMIN',param))==0 & junk.(sprintf('%sMAX',param))~=0 
         disp(sprintf('Error in values for %s; MIN cannot be 0 with non-zero MAX',param))
-        break
+        return
     elseif junk.(sprintf('%sMIN',param))~=0 & junk.(sprintf('%sMAX',param))==0 
         disp(sprintf('Error in values for %s; MAX cannot be 0 with non-zero MIN',param))
-        break     
+        return     
     elseif junk.(sprintf('%sMIN',param))>junk.(sprintf('%sMAX',param)) 
         disp(sprintf('Error in values for %s; Specified MIN > MAX',param))
-        break 
+        return 
     end
 
     %if both are zeros
@@ -367,13 +367,13 @@
     %run a check
     if junk.(sprintf('%sMIN',param))==0 & junk.(sprintf('%sMAX',param))~=0 
         disp(sprintf('Error in values for %s; MIN cannot be 0 with non-zero MAX',param))
-        break
+        return
     elseif junk.(sprintf('%sMIN',param))~=0 & junk.(sprintf('%sMAX',param))==0 
         disp(sprintf('Error in values for %s; MAX cannot be 0 with non-zero MIN',param))
-        break     
+        return     
     elseif junk.(sprintf('%sMIN',param))>junk.(sprintf('%sMAX',param)) 
         disp(sprintf('Error in values for %s; Specified MIN > MAX',param))
-        break 
+        return 
     end
 
 
@@ -409,13 +409,13 @@
     %run a check
     if junk.(sprintf('%sMIN',param))==0 & junk.(sprintf('%sMAX',param))~=0 
         disp(sprintf('Error in values for %s; MIN cannot be 0 with non-zero MAX',param))
-        break
+        return
     elseif junk.(sprintf('%sMIN',param))~=0 & junk.(sprintf('%sMAX',param))==0 
         disp(sprintf('Error in values for %s; MAX cannot be 0 with non-zero MIN',param))
-        break     
+        return     
     elseif junk.(sprintf('%sMIN',param))>junk.(sprintf('%sMAX',param)) 
         disp(sprintf('Error in values for %s; Specified MIN > MAX',param))
-        break 
+        return 
     end
 
     %if both are zeros
@@ -439,13 +439,13 @@
     %run a check
     if junk.(sprintf('%sMIN',param))==0 & junk.(sprintf('%sMAX',param))~=0 
         disp(sprintf('Error in values for %s; MIN cannot be 0 with non-zero MAX',param))
-        break
+        return
     elseif junk.(sprintf('%sMIN',param))~=0 & junk.(sprintf('%sMAX',param))==0 
         disp(sprintf('Error in values for %s; MAX cannot be 0 with non-zero MIN',param))
-        break     
+        return     
     elseif junk.(sprintf('%sMIN',param))>junk.(sprintf('%sMAX',param)) 
         disp(sprintf('Error in values for %s; Specified MIN > MAX',param))
-        break 
+        return 
     end
 
     %if both are zeros
@@ -471,13 +471,13 @@
     %run a check
     if junk.(sprintf('%sMIN',param))==0 & junk.(sprintf('%sMAX',param))~=0 
         disp(sprintf('Error in values for %s; MIN cannot be 0 with non-zero MAX',param))
-        break
+        return
     elseif junk.(sprintf('%sMIN',param))~=0 & junk.(sprintf('%sMAX',param))==0 
         disp(sprintf('Error in values for %s; MAX cannot be 0 with non-zero MIN',param))
-        break     
+        return     
     elseif junk.(sprintf('%sMIN',param))>junk.(sprintf('%sMAX',param)) 
         disp(sprintf('Error in values for %s; Specified MIN > MAX',param))
-        break 
+        return 
     end
 
     %if both are zeros
@@ -502,13 +502,13 @@
     %run a check
     if junk.(sprintf('%sMIN',param))==0 & junk.(sprintf('%sMAX',param))~=0 
         disp(sprintf('Error in values for %s; MIN cannot be 0 with non-zero MAX',param))
-        break
+        return
     elseif junk.(sprintf('%sMIN',param))~=0 & junk.(sprintf('%sMAX',param))==0 
         disp(sprintf('Error in values for %s; MAX cannot be 0 with non-zero MIN',param))
-        break     
+        return     
     elseif junk.(sprintf('%sMIN',param))>junk.(sprintf('%sMAX',param)) 
         disp(sprintf('Error in values for %s; Specified MIN > MAX',param))
-        break 
+        return 
     end
 
     %if both are zeros
@@ -532,13 +532,13 @@
     %run a check
     if junk.(sprintf('%sMIN',param))==0 & junk.(sprintf('%sMAX',param))~=0 
         disp(sprintf('Error in values for %s; MIN cannot be 0 with non-zero MAX',param))
-        break
+        return
     elseif junk.(sprintf('%sMIN',param))~=0 & junk.(sprintf('%sMAX',param))==0 
         disp(sprintf('Error in values for %s; MAX cannot be 0 with non-zero MIN',param))
-        break     
+        return     
     elseif junk.(sprintf('%sMIN',param))>junk.(sprintf('%sMAX',param)) 
         disp(sprintf('Error in values for %s; Specified MIN > MAX',param))
-        break 
+        return 
     end
 
     %if both are zeros
@@ -562,13 +562,13 @@
     %run a check
     if junk.(sprintf('%sMIN',param))==0 & junk.(sprintf('%sMAX',param))~=0 
         disp(sprintf('Error in values for %s; MIN cannot be 0 with non-zero MAX',param))
-        break
+        return
     elseif junk.(sprintf('%sMIN',param))~=0 & junk.(sprintf('%sMAX',param))==0 
         disp(sprintf('Error in values for %s; MAX cannot be 0 with non-zero MIN',param))
-        break     
+        return     
     elseif junk.(sprintf('%sMIN',param))>junk.(sprintf('%sMAX',param)) 
         disp(sprintf('Error in values for %s; Specified MIN > MAX',param))
-        break 
+        return 
     end
 
     %if both are zeros
@@ -592,13 +592,13 @@
     %run a check
     if junk.(sprintf('%sMIN',param))==0 & junk.(sprintf('%sMAX',param))~=0 
         disp(sprintf('Error in values for %s; MIN cannot be 0 with non-zero MAX',param))
-        break
+        return
     elseif junk.(sprintf('%sMIN',param))~=0 & junk.(sprintf('%sMAX',param))==0 
         disp(sprintf('Error in values for %s; MAX cannot be 0 with non-zero MIN',param))
-        break     
+        return     
     elseif junk.(sprintf('%sMIN',param))>junk.(sprintf('%sMAX',param)) 
         disp(sprintf('Error in values for %s; Specified MIN > MAX',param))
-        break 
+        return 
     end
 
     %if both are zeros
@@ -624,13 +624,13 @@
     %run a check
     if junk.(sprintf('%sMIN',param))==0 & junk.(sprintf('%sMAX',param))~=0 
         disp(sprintf('Error in values for %s; MIN cannot be 0 with non-zero MAX',param))
-        break
+        return
     elseif junk.(sprintf('%sMIN',param))~=0 & junk.(sprintf('%sMAX',param))==0 
         disp(sprintf('Error in values for %s; MAX cannot be 0 with non-zero MIN',param))
-        break     
+        return     
     elseif junk.(sprintf('%sMIN',param))>junk.(sprintf('%sMAX',param)) 
         disp(sprintf('Error in values for %s; Specified MIN > MAX',param))
-        break 
+        return 
     end
 
     %if both are zeros
@@ -654,13 +654,13 @@
     %run a check
     if junk.(sprintf('%sMIN',param))==0 & junk.(sprintf('%sMAX',param))~=0 
         disp(sprintf('Error in values for %s; MIN cannot be 0 with non-zero MAX',param))
-        break
+        return
     elseif junk.(sprintf('%sMIN',param))~=0 & junk.(sprintf('%sMAX',param))==0 
         disp(sprintf('Error in values for %s; MAX cannot be 0 with non-zero MIN',param))
-        break     
+        return     
     elseif junk.(sprintf('%sMIN',param))>junk.(sprintf('%sMAX',param)) 
         disp(sprintf('Error in values for %s; Specified MIN > MAX',param))
-        break 
+        return 
     end
 
     %if both are zeros
@@ -684,13 +684,13 @@
     %run a check
     if junk.(sprintf('%sMIN',param))==0 & junk.(sprintf('%sMAX',param))~=0 
         disp(sprintf('Error in values for %s; MIN cannot be 0 with non-zero MAX',param))
-        break
+        return
     elseif junk.(sprintf('%sMIN',param))~=0 & junk.(sprintf('%sMAX',param))==0 
         disp(sprintf('Error in values for %s; MAX cannot be 0 with non-zero MIN',param))
-        break     
+        return     
     elseif junk.(sprintf('%sMIN',param))>junk.(sprintf('%sMAX',param)) 
         disp(sprintf('Error in values for %s; Specified MIN > MAX',param))
-        break 
+        return 
     end
 
     %if both are zeros
@@ -715,13 +715,13 @@
     %run a check
     if junk.(sprintf('%sMIN',param))==0 & junk.(sprintf('%sMAX',param))~=0 
         disp(sprintf('Error in values for %s; MIN cannot be 0 with non-zero MAX',param))
-        break
+        return
     elseif junk.(sprintf('%sMIN',param))~=0 & junk.(sprintf('%sMAX',param))==0 
         disp(sprintf('Error in values for %s; MAX cannot be 0 with non-zero MIN',param))
-        break     
+        return     
     elseif junk.(sprintf('%sMIN',param))>junk.(sprintf('%sMAX',param)) 
         disp(sprintf('Error in values for %s; Specified MIN > MAX',param))
-        break 
+        return 
     end
 
     %if both are zeros
@@ -796,7 +796,7 @@
     
 %start the waitbar
 if WAITFLAG==1
-    X=waitbar(0,'Completing Monte Carlo simulation runs. Please wait.');
+    wbhandle=waitbar(0,'Completing Monte Carlo simulation runs. Please wait.');
 end
 
 % Pull parameter set "i" from the random vectors and run the model
@@ -805,6 +805,15 @@ for i = 1:N
     %Run the forward model for parameter set i 
         Model = OTIS(Instate,Pars,i,OSFLAG);
       
+    %check that model time bounds observed times
+        if OBSTIME(1)<Model.ctime(1)
+            disp('At least one observation exists before modeled time')
+            disp('   TRUNCATING observations to the modeled time period for both TIME and CONC')
+            OBSTIME = OBSTIME
+            
+        end
+        
+        
     %Interpolate simulation times to model times
         Sim = interp1(Model.ctime,Model.conc,OBSTIME);
         %plot(OBSTIME,OBSCONC,'.',Model.ctime,Model.conc,'.',usboundtimes,usboundconcs),legend('obs','mod')
@@ -816,6 +825,10 @@ for i = 1:N
         end
         
     %Analysis of simulated output
+        if sum(isnan(Sim))>0
+            keyboard
+        end
+    
         BTCMOD = BTCAnalysis(OBSTIME,Sim,reachlength);
                
 	%Store the absolute error for the different metrics from BTCAnalysis
@@ -888,7 +901,7 @@ for i = 1:N
 end
 
 if WAITFLAG==1
-    close(X)
+    close(wbhandle)
 end
 
 %Put the input and output timeseries in the Data structure

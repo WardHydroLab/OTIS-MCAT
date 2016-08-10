@@ -1,13 +1,13 @@
 
 
                       OTIS SOLUTE TRANSPORT MODEL            
-                      Version: MOD40 (Feb. 1998)    
-                      --------------------------
+                      Version: MOD40 (May 1997)     
+                      -----------------------------
 
 
           Runtime Information
           -------------------
-          Date and Time :  15-Oct-14 16:44:20
+          Date and Time :  
 
 
 
@@ -27,7 +27,7 @@
           Print Option                              :     1
           Requested Print Interval              [hr]:   4.16700E-03
           Integration Time Step                 [hr]:   4.16700E-03
-          Starting Time                         [hr]:   8.01667E+00
+          Starting Time                         [hr]:   7.91667E+00
           Ending Time                           [hr]:   7.80000E+01
           Starting Distance                      [L]:   0.00000E+00
           Downstream Boundary Condition [mass/L^2-s]:   0.00000E+00
@@ -44,7 +44,7 @@
           Reach   Start    End    Start           End
           No.     Seg.     Seg.   Distance [L]    Distance [L]
           ----------------------------------------------------
-              1       1     781       0.000         781.000
+              1       1     781        .000         781.000
 
 
 
@@ -57,7 +57,7 @@
           Reach  No.     Reach         Segment      Dispersion
           No.    Segs.   Length [L]    Length [L]   Coeff.[L^2/s]
           --------------------------------------------------------
-             1     781      781.000        1.000    1.31738E+00
+             1     781      781.000        1.000    7.86950E-02
 
 
           Storage Parameters
@@ -66,7 +66,7 @@
           Reach  Zone Area    Rate
           No.    [L^2]        [/sec]
           ---------------------------------
-              1  2.22600E-01  4.21700E-03
+              1  7.81621E-01  8.68530E-02
 
 
 
@@ -105,7 +105,7 @@
           Reach     Inflow          Outflow         Area
           No.       [L^3/s-L]       [L^3/s-L]       [L^2]
           -------------------------------------------------------
-              1     3.00000E-06     0.00000E+00     3.12370E-01
+              1     3.00000E-06     0.00000E+00     4.30979E-01
 
 
           Initial Lateral Inflow Concentrations, Solute #  1
@@ -117,7 +117,7 @@
              1       0.00000E+00
 
 
-          Number of Upstream Boundary Conditions: 106
+          Number of Upstream Boundary Conditions: 107
           Boundary Condition Option             :   3
 
 
@@ -126,7 +126,8 @@
           Begin                Concentration
           Time [hour]          [mass/L^3]
           ----------------------------------
-           0.0000E+00           3.7600E+00
+           0.0000E+00           3.8700E+00
+           7.9333E+00           3.8700E+00
            8.0167E+00           3.7600E+00
            8.5000E+00           3.6700E+00
            8.5333E+00           3.7300E+00
@@ -256,4 +257,4 @@
           Location        Channel       Storage
           [L]            [mass/L^3]    [mass/L^3]
           -----------------------------------------
-             580.50       3.306E+00
+             580.50       3.397E+00

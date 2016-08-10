@@ -202,7 +202,7 @@ if sim==0 & mc==1
         else
             disp('MCRunData.mat not found')
             disp('Analysis Terminated')
-            break
+            return
         end        
         
             load('Output_files/MCRunData.mat');
@@ -226,6 +226,9 @@ disp('MCAT input files built successfully')
 if METRICS==0
     if BOXFLAG==1
         disp('Creating and saving boxplots')
+        if exist('Output_files/boxplots')==0
+            mkdir('Output_files/boxplots')
+        end
         run code/OTIS-MCAT_TEST/makeboxplots.m
     else
         disp('Box Plots not requested')
@@ -237,6 +240,9 @@ end
 %Figures of dotty plots and CI Distribution
 if CIFLAG==1
     disp('Creating and saving CI distributions')
+    if exist('Output_files/CI_plots')==0
+       mkdir('Output_files/CI_plots');
+    end
     run code/OTIS-MCAT_TEST/make_ci_distribution.m
 else
     disp('CI Distributions not requested')

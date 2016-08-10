@@ -3,10 +3,6 @@
 cd ..
 cd ..
 
-%Verify a directory exists to store the data
-    if exist('Output_files/CI_plots')==0
-       mkdir('Output_files/CI_plots');
-    end
 
 
 
@@ -49,8 +45,11 @@ for parcol=1:size(pars,2)
         plot(d1,100*c1./(sum(c1)),'Color',MAP(i*floor(64/length(m)),:),'LineWidth',2);hold on;
     end;
     plot([partemp(b(1)) partemp(b(1))],[0 100*max(c1)./(sum(c1))+10],'Color',[0.5 0.5 0.5]);
-    axis([min(partemp) max(partemp) 0 100*max(c1)./(sum(c1))+10]);
-
+    if sum(c1)==0
+        axis([min(partemp) max(partemp) 0 100]);
+    else
+        axis([min(partemp) max(partemp) 0 100*max(c1)./(sum(c1))+10]);
+    end
 
 %add a legend
     legend(num2str(m'))

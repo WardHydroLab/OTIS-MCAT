@@ -5,7 +5,6 @@ function BTC = BTCAnalysis(time,conc,L)
     %Concentration
     %Distance between observation sets
     
-    
 %Analyses  
 
     %Calculate t99
